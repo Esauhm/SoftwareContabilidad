@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01e93322-aefc-4597-a363-665b4e952928">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="368"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="tot_devengado" class="java.lang.String"/>
+	<parameter name="renta_gravada" class="java.lang.String"/>
+	<parameter name="aguinaldo_excento" class="java.lang.String"/>
+	<parameter name="afp" class="java.lang.String"/>
+	<parameter name="iss" class="java.lang.String"/>
+	<parameter name="impuesto_renta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="23" width="555" height="1" uuid="39cf33ea-73ea-4122-a39a-0e66c0bafcee"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="25" width="555" height="20" uuid="235c4f84-a75c-4b94-9895-51376d8b1b2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA DE RENTA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="55" width="555" height="1" uuid="19bc1fe7-3b9f-45fd-bf59-b4ef72617d09"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="36" uuid="e28c882b-c746-40f3-91b3-58ccc4e2f208"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEÑOR DIRECTOR GENERAL DE IMPUESTOS INTERNOS
+PRESENTE]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="61" uuid="e8710452-e5eb-4263-9788-c3b0343622bb"/>
+				<text><![CDATA[Por este medio hacemos constar que  el empleado:                                                                               y DUI: 00000000-0,
+devengó, en concepto de salarios, comisiones,horas extras,gratificaciones y aguinaldo, distribuido de la siguiente forma:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="231" y="0" width="179" height="15" uuid="3e135a22-3522-44ff-8b8e-2fa3281efdd9"/>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="335" splitType="Stretch">
+			<staticText>
+				<reportElement x="255" y="0" width="51" height="14" uuid="84e58c9e-724c-40b4-8f06-cda6050b49aa"/>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="14" width="137" height="14" uuid="a7e6a1f0-6b6a-4c4a-8405-a30c24f1edbe"/>
+				<text><![CDATA[Renta Gravadas:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="28" width="137" height="14" uuid="c14a4a1a-05c8-4acb-8100-de695d52dd00"/>
+				<text><![CDATA[Aguinaldo Excento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="42" width="137" height="14" uuid="c593bccc-7547-4f9c-acce-9f5f45e0175d"/>
+				<text><![CDATA[AFP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="56" width="137" height="14" uuid="79c3cfb5-8cd7-4338-a85e-69c1a2911f1b"/>
+				<text><![CDATA[Seguro Social:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="255" y="77" width="100" height="1" uuid="704c40f6-1c3e-4318-89e2-a2fe02de566f"/>
+			</line>
+			<staticText>
+				<reportElement x="118" y="77" width="137" height="14" uuid="938b8045-c072-437e-8a77-3b94e9533973"/>
+				<text><![CDATA[Total devengado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="111" width="355" height="14" uuid="6586dc48-9bc6-4073-a001-93ff948a5d04"/>
+				<text><![CDATA[tambien se hace constar que en dicho periodo se le retuvo lo siguiente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="118" y="138" width="128" height="14" uuid="85ef1409-a236-425f-939b-c6230a306136"/>
+				<text><![CDATA[Impuesto sobre la renta:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="255" y="152" width="100" height="1" uuid="a350ea86-f2df-4dad-a577-637b8d67ed07"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="183" width="555" height="45" uuid="3866572e-f07e-4dc0-aa38-0be5e6899aee"/>
+				<text><![CDATA[Y para efectos de cumplimiento de su DECLARACION DE IMPUESTOS SOBRE LA RENTA, la extendemos la presenteen la ciudad de Santa Ana,]]></text>
+			</staticText>
+			<image>
+				<reportElement x="191" y="228" width="190" height="107" uuid="dabb1d16-8ff1-4bdf-b313-e3a873fd66f9"/>
+				<imageExpression><![CDATA["C:\\Users\\gergo\\Desktop\\Sofware_ContabilidadD\\src\\img\\sello.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="258" width="191" height="44" uuid="bcf2c805-7100-4139-82ad-4a254f901cb1"/>
+				<text><![CDATA[Jéfe de Compensaciones y Beneficios
+BANCO PROMERICA, S.A]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="255" y="14" width="100" height="14" uuid="1fcf022a-32c1-4e8b-bc40-ba5c05c0e549"/>
+				<textFieldExpression><![CDATA[$P{renta_gravada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="28" width="117" height="14" uuid="93837084-28bb-453d-ab0e-76f59585c4ff"/>
+				<textFieldExpression><![CDATA[$P{aguinaldo_excento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="42" width="100" height="14" uuid="e7a33aa6-6ce6-469d-871f-c37dfd42a110"/>
+				<textFieldExpression><![CDATA[$P{afp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="56" width="100" height="14" uuid="8ae1c1f4-f444-4a3e-98d0-cd9407c3e131"/>
+				<textFieldExpression><![CDATA[$P{iss}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="78" width="100" height="13" uuid="7f172ea8-559f-43b1-8445-3297fa2b0036"/>
+				<textFieldExpression><![CDATA[$P{tot_devengado}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="98" y="195" width="197" height="14" uuid="45bda8cc-40bf-4298-adad-1c66fac2a17f"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="138" width="100" height="14" uuid="a7ff3e27-bb64-45ea-a213-4b4081070986"/>
+				<textFieldExpression><![CDATA[$P{impuesto_renta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="27" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

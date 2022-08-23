@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c5fa625-df54-47d2-8f44-ee07870b041a">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="602"/>
+	<property name="ireport.y" value="318"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="sueldo_mes" class="java.lang.String"/>
+	<parameter name="dias_trabajados" class="java.lang.String"/>
+	<parameter name="hr_extra" class="java.lang.String"/>
+	<parameter name="hr_extra_noche" class="java.lang.String"/>
+	<parameter name="tot_ingreso" class="java.lang.String"/>
+	<parameter name="liquido_pagar" class="java.lang.String"/>
+	<parameter name="iss" class="java.lang.String"/>
+	<parameter name="afp" class="java.lang.String"/>
+	<parameter name="isr" class="java.lang.String"/>
+	<parameter name="tot_descuento" class="java.lang.String"/>
+	<parameter name="tot_hr_extra" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="145" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="10" width="802" height="1" uuid="ccf8b2c2-31d9-4585-8ddc-2abbe3f19d23"/>
+			</line>
+			<line>
+				<reportElement x="0" y="141" width="802" height="1" uuid="4a119655-8770-4b8c-bc05-d6064d2d4c13"/>
+			</line>
+			<staticText>
+				<reportElement x="337" y="23" width="153" height="30" uuid="0f82d1aa-13f7-4e4d-a523-3a940a4cde12"/>
+				<textElement>
+					<font fontName="Dialog" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Boleta de Pago ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="602" y="107" width="71" height="21" uuid="baa5038d-b8da-467d-8f1c-32d17ee027d9"/>
+				<textElement>
+					<font fontName="Dialog" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo de ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="765" y="108" width="37" height="20" uuid="ec1d9928-89b5-40ed-b859-db6d1008c27a"/>
+				<textElement>
+					<font fontName="Dialog" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[días.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="661" y="23" width="141" height="30" uuid="efc298ca-8627-4a7d-9d77-bd26444d81bf"/>
+				<textElement>
+					<font fontName="Dialog" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Planilla salarial]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="74" width="149" height="21" uuid="65e69e44-28cd-4c87-8e15-236bd6575c38"/>
+				<textElement>
+					<font fontName="Dialog" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BANCO PROMERICA. S.A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="136" height="12" uuid="eb4de47f-7ef9-4c8c-ae18-484750c4d162"/>
+				<textElement>
+					<font fontName="Dialog" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gerencia de Recursos Humanos.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="673" y="108" width="92" height="20" uuid="06f1d665-49b4-4162-aaba-d4e424d6a974"/>
+				<textFieldExpression><![CDATA[$P{dias_trabajados}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="41" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="35" width="802" height="1" uuid="5f5e46d5-bd9e-4fe7-8603-ea104331b6af"/>
+			</line>
+			<staticText>
+				<reportElement x="26" y="16" width="99" height="20" uuid="a7150cd1-6398-4c97-b9d2-72ee3ff65aa7"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción: Pago]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="649" y="15" width="131" height="20" uuid="2e5b8da7-5856-4c08-aa5a-1dec1db65890"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción: Descuentos]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="246" splitType="Stretch">
+			<staticText>
+				<reportElement x="159" y="197" width="99" height="20" uuid="8b2cf066-b6ed-41d2-a176-3a765621174f"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Liquido a Pagar:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="562" y="197" width="99" height="20" uuid="cf1b28be-abc6-4220-a789-df2b3388e2ce"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total descuentos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="40" width="118" height="20" uuid="82f9efee-39b3-4665-9748-a96625b3882c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[seguro Social ISS:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="60" width="118" height="20" uuid="150f0c14-6f12-44de-b1d5-c22b45757f9d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AFP:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="80" width="118" height="20" uuid="b52233a7-e115-4273-8356-c039403071ab"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="40" width="99" height="20" uuid="e7576c4c-e5bd-4625-864c-df69b2874be0"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sueldo Mes:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="20" width="99" height="20" uuid="966e8c12-39fe-4d74-8158-3d15ee65fd51"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="60" width="99" height="20" uuid="e1a7c5c5-9541-4573-a00c-f9e26914789d"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Días Trabajados:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="80" width="99" height="20" uuid="bd7179bc-4801-4586-b4dd-dd893577bb51"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hrs Extra Diurna:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="100" width="99" height="20" uuid="828b62a1-dbe6-458b-8a63-53af62e0e67e"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hrs Extra Nocturna:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="154" width="99" height="20" uuid="157ba595-a72c-4436-b901-c5cfdf93be1c"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total de ingreso:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="379" y="0" width="43" height="20" uuid="4cc4ba26-2521-4aa3-84de-0d9f0b75cd13"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Detalle.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="245" width="802" height="1" uuid="ba3cd4a3-f267-4258-a6fe-ae21bf731a38"/>
+			</line>
+			<textField>
+				<reportElement x="159" y="20" width="201" height="20" uuid="68f596a5-ff8d-490d-94a7-ec9d9dadd7fe"/>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="40" width="201" height="20" uuid="484e3412-6bf8-467d-a644-24c9e922a493"/>
+				<textFieldExpression><![CDATA[$P{sueldo_mes}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="60" width="99" height="20" uuid="72eb95f9-a433-47a7-8d96-93a6dcfbfb51"/>
+				<textFieldExpression><![CDATA[$P{dias_trabajados}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="80" width="100" height="20" uuid="cd7330a9-4be5-473c-b8dd-2d69a2686992"/>
+				<textFieldExpression><![CDATA[$P{hr_extra}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="100" width="100" height="20" uuid="975930b0-3d6a-4898-aeb9-d451cb3c8dc5"/>
+				<textFieldExpression><![CDATA[$P{hr_extra_noche}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="154" width="100" height="20" uuid="c2ac15f1-3e2a-4d16-8410-78d72d1ea857"/>
+				<textFieldExpression><![CDATA[$P{tot_ingreso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="197" width="100" height="20" uuid="94d1f43a-d203-400a-84bf-944bd60c48be"/>
+				<textFieldExpression><![CDATA[$P{liquido_pagar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="40" width="100" height="20" uuid="682e26ec-bfff-45fb-942d-cc727493a442"/>
+				<textFieldExpression><![CDATA[$P{iss}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="60" width="100" height="20" uuid="6f0b55ce-c387-4ad8-9b9e-963d9b9b61fe"/>
+				<textFieldExpression><![CDATA[$P{afp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="80" width="100" height="20" uuid="df730e59-939b-47f3-8817-4b298500b9d7"/>
+				<textFieldExpression><![CDATA[$P{isr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="661" y="197" width="100" height="20" uuid="c2a70fc6-f69d-43f2-a22d-908234a73ac0"/>
+				<textFieldExpression><![CDATA[$P{tot_descuento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="120" width="99" height="20" uuid="d0a18a1c-1701-4682-be4f-691a213bc5ab"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Hrs Extras: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="158" y="120" width="100" height="20" uuid="ed081f61-76fe-4cc9-8966-2919fd20f846"/>
+				<textFieldExpression><![CDATA[$P{tot_hr_extra}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="628" y="45" width="112" height="10" uuid="7c26b4e3-5558-4703-8133-0c50afd846d0"/>
+				<textElement>
+					<font fontName="Dialog" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Licda. María del Carmen de Reyes]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="36" height="20" uuid="29e92852-41b1-4486-bbcc-f98bd8068237"/>
+				<textElement>
+					<font fontName="Dialog" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Firma:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="36" y="19" width="100" height="1" uuid="e292ee56-7409-4586-abc0-42d2d9aec4c8"/>
+			</line>
+			<staticText>
+				<reportElement x="36" y="19" width="63" height="10" uuid="bb8eedba-ef1f-4e9a-8c1a-f76de2b4c150"/>
+				<textElement>
+					<font fontName="Dialog" size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Recibí conforme]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
