@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.awt.BorderLayout;
 import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -22,6 +23,8 @@ public class frmsGravado extends javax.swing.JPanel {
      * Creates new form frmISS
      */
     DecimalFormat df = new DecimalFormat("#.00");
+  
+    
     public frmsGravado() {
         initComponents();
         this.iss();
@@ -31,46 +34,98 @@ public class frmsGravado extends javax.swing.JPanel {
         
 
     }
+    
+   
     public static double vIss,vAfp,vSgravado;
     
     public void iss(){
        frmPerfilEmp empi = new frmPerfilEmp();
-        this.jLabel4.setText(empi.sueldo);
-        if(empi.sueldo1<1000){
-             vIss= empi.sueldo1*0.03;
-             this.cal_iss.setText(""+df.format(vIss));
+       frmHorasExtras hx = new frmHorasExtras();
+       
+       if(hx.click < 1){
+           
+            this.jLabel4.setText(empi.sueldo);
+            if(empi.sueldo1<1000){
+                 vIss= empi.sueldo1*0.03;
+                 this.cal_iss.setText(""+df.format(vIss));
+
+            }else{
+                vIss=30;
+                this.cal_iss.setText(""+df.format(vIss));      
+            }
+           
+       }else {
+            this.jLabel4.setText(""+df.format(hx.Nsuma));
+            if(hx.Nsuma<1000){
+                 vIss= hx.Nsuma*0.03;
+                 this.cal_iss.setText(""+df.format(vIss));
+
+            }else{
+                vIss=30;
+                this.cal_iss.setText(""+df.format(vIss));      
+            }
+           
+       }
         
-        }else{
-            vIss=30;
-            this.cal_iss.setText(""+df.format(vIss));      
-        }
 
     
     }
     
     public void afp(){
        frmPerfilEmp empi = new frmPerfilEmp();
-       this.jLabel14.setText(empi.sueldo);
-        if(empi.sueldo1<7045.06){
-             vAfp= empi.sueldo1*0.0725;
-             this.cal_afp.setText(""+df.format(vAfp));
-        
-        }else{
-            vAfp=7045.06*0.0725;
-            this.cal_afp.setText(""+df.format(vAfp));      
-        }
+       frmHorasExtras hx = new frmHorasExtras();
+       
+       if(hx.click < 1){
+           
+           this.jLabel14.setText(empi.sueldo);
+            if(empi.sueldo1<7045.06){
+                 vAfp= empi.sueldo1*0.0725;
+                 this.cal_afp.setText(""+df.format(vAfp));
+
+            }else{
+                vAfp=7045.06*0.0725;
+                this.cal_afp.setText(""+df.format(vAfp));      
+            }
+           
+       }else{
+           this.jLabel14.setText(""+df.format(hx.Nsuma));
+            if(hx.Nsuma<7045.06){
+                 vAfp= hx.Nsuma*0.0725;
+                 this.cal_afp.setText(""+df.format(vAfp));
+
+            }else{
+                vAfp=7045.06*0.0725;
+                this.cal_afp.setText(""+df.format(vAfp));      
+            }
+           
+       }
+         
+       
+       
     
     
     }
     
     public void sGravado(){
         frmPerfilEmp empi = new frmPerfilEmp();
+        frmHorasExtras hx = new frmHorasExtras();
 
-        vSgravado = empi.sueldo1-(vIss+vAfp);
-        this.jLabel18.setText(empi.sueldo);
-        this.jLabel19.setText(""+vIss);
-        this.cal_afp2.setText(""+df.format(vAfp));
-        this.resultado.setText("Sueldo gravado: "+df.format(vSgravado));
+        if(hx.click < 1){
+            vSgravado = empi.sueldo1-(vIss+vAfp);
+            this.jLabel18.setText(empi.sueldo);
+            this.jLabel19.setText(""+vIss);
+            this.cal_afp2.setText(""+df.format(vAfp));
+            this.resultado.setText("Sueldo gravado: "+df.format(vSgravado));
+
+        }else {
+            vSgravado = hx.Nsuma-(vIss+vAfp);
+            this.jLabel18.setText(""+df.format(hx.Nsuma));
+            this.jLabel19.setText(""+df.format(vIss));
+            this.cal_afp2.setText(""+df.format(vAfp));
+            this.resultado.setText("Sueldo gravado: "+df.format(vSgravado));
+            
+        }
+        
         
         
         
@@ -78,12 +133,24 @@ public class frmsGravado extends javax.swing.JPanel {
     }
     public void cCargarTS(){
        frmPerfilEmp empi = new frmPerfilEmp();
+       frmHorasExtras hx = new frmHorasExtras();
 
-        this.jLabel42.setText("$  "+empi.sueldo);
-        this.afp_renta.setText("$  "+ df.format(vAfp));
-        this.iss_renta.setText("$  "+df.format(vIss));
-        this.total_renta.setText("$  "+(df.format(vAfp+vIss)));
-        this.renta_imponible.setText("$  "+df.format(vSgravado));
+       if(hx.click < 1){
+           this.jLabel42.setText("$  "+empi.sueldo);
+            this.afp_renta.setText("$  "+ df.format(vAfp));
+            this.iss_renta.setText("$  "+df.format(vIss));
+            this.total_renta.setText("$  "+(df.format(vAfp+vIss)));
+            this.renta_imponible.setText("$  "+df.format(vSgravado));
+           
+       }else {
+           this.jLabel42.setText("$  "+df.format(hx.Nsuma));
+            this.afp_renta.setText("$  "+ df.format(vAfp));
+            this.iss_renta.setText("$  "+df.format(vIss));
+            this.total_renta.setText("$  "+(df.format(vAfp+vIss)));
+            this.renta_imponible.setText("$  "+df.format(vSgravado));
+           
+       }
+        
     }
 
     /**

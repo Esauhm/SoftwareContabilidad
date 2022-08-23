@@ -22,6 +22,11 @@ public class frmHorasExtras extends javax.swing.JPanel {
     double tiemp;
     double temp1;
     double temp2;
+    double resuF;
+    public static Double Nsuma;
+    public static int click = 0;
+   
+
     
     
     public frmHorasExtras() {
@@ -73,6 +78,7 @@ public class frmHorasExtras extends javax.swing.JPanel {
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
+        jButton2 = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Roboto Black", 1, 36)); // NOI18N
         jLabel1.setText("Horas extras");
@@ -224,6 +230,13 @@ public class frmHorasExtras extends javax.swing.JPanel {
             }
         });
 
+        jButton2.setText("Confirmar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -244,6 +257,10 @@ public class frmHorasExtras extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(69, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(328, 328, 328))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,7 +279,9 @@ public class frmHorasExtras extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -283,7 +302,7 @@ public class frmHorasExtras extends javax.swing.JPanel {
         // TODO add your handling code here:
         try{
             double cal1, cal2, cal3;
-            double resuF, resu,resu1;
+            double resu,resu1;
             double result,result1;
             
           if( this.jRadioButton1.isSelected()){
@@ -298,9 +317,9 @@ public class frmHorasExtras extends javax.swing.JPanel {
                 }else if(Double.parseDouble(this.jTextField2.getText()) == 0){
                     result1 = ((temp1* Double.parseDouble(this.jTextField1.getText())));
                     cal1 = result1 * 2;
-                    resu = (temp1*8)+cal1; 
+                    resuF = (temp1*8)+cal1; 
 
-                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resu));
+                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resuF));
 
                 }else{
 
@@ -328,9 +347,9 @@ public class frmHorasExtras extends javax.swing.JPanel {
                 }else if(Double.parseDouble(this.jTextField2.getText()) == 0){
                     result1 = ((temp1* Double.parseDouble(this.jTextField1.getText())));
                     cal1 = result1 * 3;
-                    resu = (temp1*8)+cal1; 
+                    resuF = (temp1*8)+cal1; 
 
-                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resu));
+                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resuF));
 
                 }else{
 
@@ -358,9 +377,9 @@ public class frmHorasExtras extends javax.swing.JPanel {
                 }else if(Double.parseDouble(this.jTextField2.getText()) == 0){
                     result1 = ((temp1* Double.parseDouble(this.jTextField1.getText())));
                     cal1 = result1 * 4;
-                    resu = (temp1*8)+cal1; 
+                    resuF = (temp1*8)+cal1; 
 
-                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resu));
+                    this.jLabel8.setText("Total ganancia dia:  $"+f.format(resuF));
 
                 }else{
 
@@ -403,11 +422,19 @@ public class frmHorasExtras extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.click = 2;
+        JOptionPane.showMessageDialog(null, "horas extras confirmadas"+click);
+        frmPerfilEmp empi = new frmPerfilEmp();
+        Nsuma = resuF + Double.parseDouble(empi.sueldo);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
